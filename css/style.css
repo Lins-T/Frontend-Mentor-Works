@@ -64,7 +64,7 @@ main {
   margin-block-end: calc(var(--size) * 2);
 }
 
-h4 {
+h2 {
   margin-block-end: calc(var(--size) * 2);
 }
 
