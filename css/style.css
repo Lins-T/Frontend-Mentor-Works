@@ -1,1 +1,185 @@
+:root {
+  /* Primary colors*/
+  
+  --Soft-red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+  
+  /* Neutral colors*/
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+  --White: hsl(292,0%,100%);
+  
+  --size: 1rem;
+  --radius: 10px;
+}
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Cream);
+  min-height: 120svh;
+}
+
+.container {
+  width: clamp(320px, 40vw, 30vw);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--Soft-red);
+  padding-inline: calc(var(--size) * 1.5);
+  padding-block: calc(var(--size) * 1.5);
+  margin-block-end: calc(var(--size) * 2);
+  border-radius: var(--radius);
+}
+
+nav section > p:first-of-type {
+  font-size: 0.7em;
+  margin-block-end: calc(var(--size) - 0.7rem);
+  color: var(--White);
+}
+
+.balance {
+  font-weight: 700;
+  color: var(--White);
+}
+
+main {
+  background-color: var(--Very-pale-orange);
+  border-radius: var(--radius);
+  padding-inline: calc(var(--size) * 1);
+  padding-block: calc(var(--size) * 1);
+  margin-block-end: calc(var(--size) * 2);
+}
+
+h4 {
+  margin-block-end: calc(var(--size) * 2);
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.7rem;
+  height: 180px;
+  margin-block-end: calc(var(--size) *1);
+}
+
+.bar {
+  width:  20%;
+  background-color: var(--Soft-red);
+  border-radius: calc(var(--radius) - 5px);
+  position: relative;
+}
+
+.monday {
+  height: 30%;
+}
+
+.tuesday {
+  height: 50%;
+}
+
+.wednesday {
+  height: 80%;
+  background-color: var(--Cyan);
+}
+
+.thursday {
+  height: 45%;
+}
+
+.friday {
+  height: 40%;
+}
+
+.saturday {
+  height: 70%;
+}
+
+.sunday {
+  height: 43%;
+}
+
+.days {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding-block-end: calc(var(--size) * 2);
+  margin-block-end: calc(var(--size) * 2);
+  border-block-end: 2px solid var(--Cream);
+}
+
+.days p {
+  font-size: 0.6em;
+  font-weight: 450;
+  text-align: center;
+  width:  20%;
+  color: var(--Medium-brown);
+}
+
+.current-month {
+  color: var(--Medium-brown);
+  font-size: 0.8em;
+  margin-block-end: calc(var(--size) * 0.6);
+}
+
+.Amounts {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas: 
+  "CN PV"
+  "CN p";
+}
+
+.cutrent-number {
+  grid-area: CN;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.previous-number {
+  grid-area: PV;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-align: right;
+}
+
+.previous-number + p {
+  grid-area: p;
+  color: var(--Medium-brown);
+  font-size: 0.7em; 
+  text-align: right;
+}
+
+.tooltip {
+  background-color: var(--Dark-brown);
+  border-radius: calc(var(--radius) - 5px);
+  color: var(--Very-pale-orange);
+  font-size: 0.7em; 
+  font-weight: 700;
+  padding-inline: calc(var(--size) - 0.8rem);
+  padding-block: calc(var(--size) - 0.6rem);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  translate: -50% 0%;
+  display: none;
+}
+
+.show {
+  display: block;
+}
