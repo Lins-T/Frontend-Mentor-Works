@@ -5,6 +5,7 @@ const body = document.querySelector('body');
 let barChart = Array.from(bars);
 
 async function js() {
+  // I keep getting errors fpr loading the Json 
   let data = await fetch('../data.json');
   let jsonData = await data.json();
 
@@ -27,4 +28,3 @@ async function js() {
 }
 
 js()
-
