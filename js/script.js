@@ -1,30 +1,48 @@
 'use strict';
 
-const bars = document.querySelectorAll('.bar');
-const body = document.querySelector('body');
-let barChart = Array.from(bars);
+const nav = document.querySelector('.navlist');
+const feature = document.querySelectorAll('.tracks');
+let allTrack = Array.from(feature);
 
-async function js() {
-  // I keep getting errors fpr loading the Json 
-  let data = await fetch('../data.json');
-  let jsonData = await data.json();
+fetch('../data.json')
+  .then(response => response.json())
+  .then(data => {
+    later(data);
+})
 
- await barChart.forEach(bar => {
+function later(jsonData) {
+  const data = jsonData;
 
-    let amntTip = document.createElement('div');
-    amntTip.classList.add('tooltip');
+  allTrack.forEach(elem => {
+    const all = elem.firstElementChild.nextElementSibling.nextElementSibling;
+    const status = elem.lastElementChild;
+    
+    elem.firstElementChild.innerHTML = data[allTrack.indexOf(elem)].title;
+    all.innerHTML = data[allTrack.indexOf(elem)].timeframes.weekly.current + 'hrs';
+    status.innerHTML = 'Last week - ' + data[allTrack.indexOf(elem)].timeframes.weekly.previous + 'hrs';
 
-    bar.addEventListener('click', btn => {
-      let txtData = jsonData[barChart.indexOf(bar)].amount;
-
-      amntTip.innerHTML = '$' + txtData;
-      bar.appendChild(amntTip);
-
-      amntTip.classList.toggle('show')
-
-    }, false);
-
+    nav.addEventListener('click', btn => {
+      if (btn.target === nav.firstElementChild) {
+        nav.lastElementChild.classList.remove('active');
+        nav.firstElementChild.nextElementSibling.classList.remove('active');
+        btn.target.classList.add('active');
+        all.innerHTML = data[allTrack.indexOf(elem)].timeframes.daily.current + 'hrs';
+        status.innerHTML = 'Last week - ' + data[allTrack.indexOf(elem)].timeframes.daily.previous + 'hrs';
+      }
+      else if (btn.target === nav.lastElementChild) {
+        nav.firstElementChild.classList.remove('active');
+        nav.firstElementChild.nextElementSibling.classList.remove('active');
+        btn.target.classList.add('active');
+        all.innerHTML = data[allTrack.indexOf(elem)].timeframes.monthly.current + 'hrs';
+        status.innerHTML = 'Last week - ' + data[allTrack.indexOf(elem)].timeframes.monthly.previous + 'hrs';
+      }
+      else {
+        nav.firstElementChild.classList.remove('active');
+        nav.lastElementChild.classList.remove('active');
+        btn.target.classList.add('active');
+        all.innerHTML = data[allTrack.indexOf(elem)].timeframes.weekly.current + 'hrs';
+        status.innerHTML = 'Last week - ' + data[allTrack.indexOf(elem)].timeframes.weekly.previous + 'hrs';
+      }
+    })
   })
 }
-
-js()
