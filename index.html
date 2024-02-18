@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon" /> 
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" >
-    <script src="js/script.js" defer></script>
-    <title>Expense Chart</title>
-  </head>
-  <body>
-  
-    <div class="container">
-      <nav>
-        <div>
-          <h1>My balance</h1>
-          <p class="balance">$921.48</p>
-        </div>
-        
-         <img class="logo" src="images/logo.svg" alt="logo" />
-      </nav>
-      
-      <main>
-        <h2>Spending - Last 7 days</h2>
-        
-        <div class="bar-chart">
-          <div class="monday bar"></div>
-          <div class="tuesday bar"></div>
-          <div class="wednesday bar"></div>
-          <div class="thursday bar"></div>
-          <div class="friday bar"></div>
-          <div class="saturday bar"></div>
-          <div class="sunday bar"></div>
-        </div>
-        
-        <div class="days">
-          <p>mon</p>
-          <p>tue</p>
-          <p>wed</p>
-          <p>thu</p>
-          <p>fri</p>
-          <p>sat</p>
-          <p>sun</p>
-        </div>
-        <p class="current-month">Total this month</p>
-       <div class="Amounts">
-         <p class="cutrent-number">$478.33</p>
-         <p class="previous-number">+2.4%</p>
-         <p>From last month</p>
-       </div>
-        
-      </main>
-      
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/x-icon" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+  <title>Result Summary</title>
+</head>
+
+<body>
+<div class="container"> 
+  <aside>
+    <p>Your Result</p>
+    <div class="score">
+     <i>76</i>
+      <small>of 100</small>
     </div>
+    <div class="feature">
+      <h1>Great</h1>
+      <p>
+        You scored higher than 65% of the people who have taken these tests.
+      </p>
+    </div>
+  </aside>
+  <main>
+    <h2>Summary</h2>
+    <section class="summary">
+      <div class="item">
+        <img src="assets/images/icon-reaction.svg" />
+        <h3 class="reaction">Reaction</h3>
+        <p>
+          <span>80</span> / 100
+        </p>
+      </div>
+      <div class="item memory">
+        <img src="assets/images/icon-memory.svg" />
+        <h3 class="memory">Memory</h3>
+        <p>
+          <span>80</span> / 100
+        </p>
+      </div>
+      <div class="item last">
+        <img src="assets/images/icon-verbal.svg" />
+        <h3 class="verbal">Verbal</h3>
+        <p>
+          <span>80</span> / 100
+        </p>
+      </div>
+      <div class="item last">
+        <img src="assets/images/icon-visual.svg" />
+        <h3 class="visual">Visual</h3>
+        <p>
+          <span>80</span> / 100
+        </p>
+      </div>
+    </section>
     
-  </body>
+   <a href="#"> Continue </a>
+   
+  </main>
+ </div>
+</body>
+
 </html>
