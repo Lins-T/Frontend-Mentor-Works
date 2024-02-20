@@ -32,7 +32,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 1rem;
 }
 
 @font-face {
@@ -52,6 +51,7 @@
 
 p {
   font-family: Variable-B;
+  font-size: 1.2rem;
 }
 
 aside {
@@ -65,7 +65,7 @@ aside {
   gap: calc(var(--size) * 1.5);
   border-radius: 0 0 30px 30px;
   background-color: var(--Light-slate-blue-background);
-  height: 320px;
+  min-height: 350px;
   width: 100%;
   color: var(--White);
   position: relative;
@@ -81,15 +81,14 @@ aside {
       var(--Violet-blue-circle),
       var(--Persian-blue-circle));
   text-align: center;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
 }
 
 
 @scope (.score) {
   i {
-    font-size: 3em;
-    font-weight: ;
+    font-size: 3.5em;
     font-style: normal;
     font-family: Extra-B;
   }
@@ -121,9 +120,9 @@ h1 {
   font-size: 1.5em;
 }
 
-.feature > p {
+.feature>p {
   width: 30ch;
-  font-size: 0.85em;
+  font-size: 1.05em;
   line-height: 1.3;
 }
 
@@ -194,24 +193,28 @@ span {
   font-family: Bold-B;
 }
 
-a {
+.btn {
   width: 100%;
+  height: 2.1rem;
   flex-grow: 1;
   background-color: var(--Dark-gray-blue);
   font-family: Bold-B;
   color: var(--White);
   text-decoration: none;
-  padding-block: calc(var(--size) - 0.3rem);
-  margin-block-end: var(--size);
   border-radius: 30px;
   text-align: center;
   transition: 1s all;
+  margin-block-end: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-a:hover {
+
+.btn:hover {
   background-image: linear-gradient(180deg,
-  var(--Light-slate-blue-background),
-  var(--Violet-blue-circle));
+      var(--Light-slate-blue-background),
+      var(--Violet-blue-circle));
 }
 
 @media (min-width: 900px) {
@@ -225,10 +228,11 @@ a:hover {
   }
   
   .container {
-    width: 50vw;
-    display: grid;
+    /*min-width: 50vw;*/
+    /* display: grid;
     grid-template-columns: 45% 50%;
-    gap: 1rem;
+    gap: 1rem;*/
+    display: flex;
     background-color: var(--White);
     box-shadow: 2px 2px 50px 5px var(--Light-lavender);
     border-radius: 30px;
@@ -238,11 +242,27 @@ a:hover {
     border-radius: 30px;
     height: 450px;
     margin: 0;
+    min-width: 320px;
   }
   
   .score {
     width: 200px;
     height: 200px;
+  }
+  
+  
+  @scope (.score) {
+    i {
+      font-size: 5.5em;
+      font-style: normal;
+      font-family: Extra-B;
+      font-weight: 800;
+    }
+    
+    small {
+      font-size: 1.2em font-family: Variable-B;
+      font-weight: 500;
+    }
   }
   
   .feature {
@@ -259,12 +279,14 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     gap: calc(var(--size) * 1.5);
+    min-width: 400px;
     height: 450px;
     margin: 0;
   }
   
-  a {
+  .btn {
     flex-grow: 0;
+    margin: 0;
   }
   
 }
