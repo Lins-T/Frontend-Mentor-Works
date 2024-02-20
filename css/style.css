@@ -71,7 +71,7 @@ aside:has(ul > li) li:not(li:last-of-type) {
   margin-right: 3rem;
 }
 
-aside figure {
+aside .figure {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-areas:
@@ -93,7 +93,7 @@ aside figure {
 .user-img {
   grid-area: img;
   border-radius: calc(var(--radius) * 8);
-  width: 65px;
+  width: 70px;
   border: 3px solid var(--White);
 }
 
@@ -224,24 +224,23 @@ h2 {
   
   body {
     min-height: 100svh;
-    padding: 0;
   }
   
   .container {
+    width: 75vw;
     display: flex;
     gap: 2rem;
-    width: auto;
   }
  
   aside {
     justify-content: flex-start;
     margin: 0;
-    padding-inline: calc(var(--size) * 1);
+    padding-inline: calc(var(--size) * 1.5);
     padding-block: calc(var(--size) * 1);
-    width: 200px;
+    max-width: 230px;
   }
   
-  aside figure {
+  aside .figure {
     display: block;
     padding-inline: inherit;
     padding-block: calc(var(--size) * 1.5);
@@ -269,21 +268,23 @@ h2 {
   }
   
   main {
-    flex-grow: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: minmax(200px, auto);
-    gap: 2rem;
+    flex-grow: 1;
+    gap: 2rem; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
   }
   
   .feature {
-    width: 200px;
-    
+    width: 30%;
+    height: 200px;
+    flex-grow: 1;
   }
   
   .tracks {
+    padding-inline: calc(var(--size) * 1.5);
     top: 20%;
     display: grid;
     grid-template-areas:
@@ -295,23 +296,27 @@ h2 {
   
   h2 {
     grid-area: type;
+    align-self: center;
+    font-weight: 500;
+    font-size: 1.1em;
   }
   
   img.menu {
     grid-area: menu;
     justify-self: flex-end;
+    align-self: center;
   }
   
   div.hours {
     grid-area: hour;
     font-size: 2.2em;
-    font-weight: 300;
+    font-weight: 350;
     align-self: center;
   }
   
   div.status {
     grid-area: stat;
-    font-size: 0.65em;
+    font-size: 0.75em;
     justify-self: flex-start;
   }
   
