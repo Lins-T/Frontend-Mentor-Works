@@ -227,10 +227,10 @@ h2 {
   }
   
   .container {
-    width: 75vw;
+    width: 65vw;
     display: flex;
-    gap: 2rem;
-    scale: 1;
+    gap: 1.5rem;
+    scale: 1.2;
   }
  
   aside {
@@ -270,7 +270,7 @@ h2 {
   
   main {
     flex-grow: 1;
-    gap: 2rem; 
+    gap: 1.5rem; 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
