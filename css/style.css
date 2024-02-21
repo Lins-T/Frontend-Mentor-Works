@@ -155,11 +155,11 @@ main {
 }
 
 .exercise {
-  background-color: var(--Light-red-work);
-  background-image: url('../images/icon-work.svg');
+  background-color: var(--Lime-green-exercise);
+  background-image: url('../images/icon-exercise.svg');
   background-position: top right;
   background-origin: content-box;
-  background-size: 22%;
+  background-size: 25%;
   background-repeat: no-repeat;
 }
 
