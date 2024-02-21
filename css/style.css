@@ -227,10 +227,10 @@ h2 {
   }
   
   .container {
-    width: 70vw;
+    width: 75vw;
     display: flex;
     gap: 2rem;
-    scale: 1.9;
+    scale: 1;
   }
  
   aside {
